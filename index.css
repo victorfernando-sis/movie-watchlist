@@ -1,0 +1,228 @@
+*{
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #6B7280;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+}
+
+header{
+    background-color: rgba(14, 14, 14, .8);
+    background-image: url("https://images.unsplash.com/photo-1628432136678-43ff9be34064?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2763&q=80");
+    background-size: cover;
+    background-blend-mode: multiply;
+    height: 35vh;
+    min-height: 150px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+/* ==============
+Images & Icons
+==============*/
+
+img {
+    width:100%;
+}
+
+.fa-film{
+    margin-top: 15%;
+    opacity: .3;
+    font-size: 4em;
+}
+
+.fa-film-label {
+    margin: 0;
+    opacity: .6;
+    font-size: 1em;
+    font-weight: bold;
+    letter-spacing: 1.6px; 
+}
+.action-btn{
+    font-size: .8rem; 
+    color: #000000;
+    cursor: pointer;
+}
+.fa-circle-minus{
+    color: red;
+}
+
+/* ==============
+Typography
+==============*/
+
+h1{
+    margin: 0;
+}
+.movie-title{
+    margin: 15px 15px 0 0;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #000000;
+}
+
+.info-container{
+    margin: 10px 0;
+    font-size: .9rem;
+}
+.watchlist-link{
+    margin: 2em;
+    color: inherit;
+    text-decoration: none;
+    font-weight: bold;
+    transition: .250s;
+}
+
+.watchlist-link:hover,
+.watchlist-link:focus{
+    transform: scale(1.05)
+}
+
+
+p.movie-not-found{
+    color: inherit;
+    font-weight: bold;
+    width: 50%;
+    margin: 80px auto;
+}
+
+.empty-watchlist-btn > a,
+.empty-watchlist > p{
+    text-decoration: none;
+    font-weight: bold;
+    color: inherit;
+}
+.empty-watchlist-btn{ transition: 250ms; }
+.empty-watchlist-btn:hover{
+    transform: scale(1.1);
+}
+
+/* ==============
+Layout 
+==============*/
+
+.search-container{
+    max-width: 700px;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    margin: -1.2em auto 1em;
+    position: relative;
+}
+
+.search-bar{
+    background: #FFFFFF;
+    border: 1px solid #D1D5DB;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+    border-radius: 6px;
+    width: 100%;
+    padding: 9px;
+    color: inherit;
+}
+
+.search-btn{ 
+    position: absolute;
+    height: 100%;
+    right: 0px;
+    border: 1px solid #D1D5DB;
+    border-radius: 0px 6px 6px 0px;
+    padding: 0 1.5em;
+    font-family: inherit;
+    font-weight: 500;
+    color: #374151;
+    cursor: pointer;
+    }
+
+.search-bar:focus,
+.search-btn:focus{ outline: none; }
+
+.movie-box {
+    text-align: left;
+    margin: 0 auto;
+    width: 90%;
+    font-size: .8rem;
+    padding: 1em 2em;
+    border-bottom: .5px solid #6B7280;   
+}
+
+.movie-banner{
+    min-height: 80px;
+    object-fit: cover;
+    width: 100%;
+    height: 45vh;
+}
+.movie-specs{
+    margin: 1em 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.movie-rating{ white-space: nowrap; }
+
+.action-btn{
+    font-family: inherit;
+    border: none;
+    background: none;
+    transition: 250ms;
+}
+.action-btn:hover,
+.action-btn:focus{
+    transform: scale(1.1)
+}
+
+.remove-item{ display: none; }
+
+.watchlist > .add-item{
+    display: none;
+}
+
+.watchlist > .remove-item{
+    display: block;
+}
+
+.empty-watchlist{
+    margin-top: 3em;
+}
+
+
+@media(min-width: 600px){
+
+    h1{ font-size: 3rem; }
+    
+    .movie-title{ font-size: 1.6rem; }
+
+    .movie-desc{
+        font-size: 1rem;
+        text-align: justify;
+        text-justify: inter-word;
+        line-height: 1.4rem;
+    }
+    
+    header{
+        padding: 0 3.5em;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .movie-box{
+        display: flex;
+        max-width: 850px;
+    }
+    .movie-banner{
+        object-position: left;
+        object-fit: contain;
+        max-width: 180px;
+        height: 40vh;
+    }
+    
+    .info-container{ padding: 1em; }
+    
+}
