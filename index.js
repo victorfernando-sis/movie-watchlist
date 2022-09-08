@@ -15,12 +15,14 @@ const searchBtn = document.getElementById("search-btn")
 async function searchMoviesArray(search) {
     const res = await fetch(`https://www.omdbapi.com/?apikey=62678496&plot=full&s=${search}`)
     const data = await res.json()
-    if (data.Error)
-        return null
-    await setMoviesInfo(data.Search)
+    if (!data.Error)
+        await setMoviesInfo(data.Search)
+    
+    return
 }
 
 async function renderResults() {
+    moviesListEl.innerHTML = `<div class="loader"></div>`
     await searchMoviesArray(searchInput.value)
 
     if (movies.length === 0)
